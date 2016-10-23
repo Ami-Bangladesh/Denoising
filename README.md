@@ -1,7 +1,7 @@
 # Denoising
 Noise remove from an image applying Denoising using OpenCV C++
 
-Denoising
+Denoising:
 Denoising or noise reduction is the process of removing noise from signals obtained
 from analog or digital devices. This section focuses its attention on reducing noise
 from digital images and videos.
@@ -17,6 +17,7 @@ image-denoising process a variational problem.
 OpenCV provides four functions to denoise color and grayscale images following
 the nonlocal means approach. For the TVL1 model, one function is provided. These
 functions are:
+
 • void fastNlMeansDenoising(InputArray src, OutputArray dst,
 float h = 3, int templateWindowSize = 7, int searchWindowSize
 = 21): This denoises a single grayscale image loaded in src. The
@@ -27,6 +28,7 @@ These should be odd and their recommended values are 7 and 21 pixels,
 respectively. The h parameter regulates the effect of the algorithm. Larger h
 values remove more noise defects but with the drawback of removing more
 image details. The output is stored in dst.
+
 • void fastNlMeansDenoisingColored(InputArray src, OutputArray
 dst, float h = 3, float hForColorComponents = 3, int
 templateWindowSize = 7, int searchWindowSize = 21): This is a
@@ -43,12 +45,14 @@ temporalWindowSize. The value of imgToDenoiseIndex is the target image
 index in srcImgs to be denoised. Finally, temporalWindowSize is used to
 establish the number of surrounding images to be used for denoising. This
 should be odd.
+
 • void fastNlMeansDenoisingColoredMulti(InputArrayOfArrays srcImgs, OutputArray dst, int imgToDenoiseIndex, int
 temporalWindowSize, float h = 3, float hForColorComponents
 = 3, int templateWindowSize = 7, int searchWindowSize
 = 21): This is based on the fastNlMeansDenoisingColored and
 fastNlMeansDenoisingMulti functions. The parameters are explained in
 the rest of the functions.
+
 • void denoise_TVL1(const std::vector<Mat>& observations, Mat&
 result, double lambda, int niters): This obtains a denoised image in
 result from one or more noisy images stored in observations. The lambda
