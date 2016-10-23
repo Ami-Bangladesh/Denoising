@@ -1,0 +1,1 @@
+Advantage: Easy to implement Used to remove the impulse noise. Disadvantage: It does not preserve details of image.
